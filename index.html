@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space Aero — Explorer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Space Aero home"><span class="brand-icon">✦</span> SPACE AERO</a>
+    <span class="top-note">YOUR LITTLE CORNER OF THE UNIVERSE</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="live-dot"></span> SPACE EXPLORER SIMULATOR</div>
+      <h1>Build a rocket.<br><span>Explore the unknown.</span></h1>
+      <p class="intro">Design your spacecraft, choose a destination, and launch your own imaginary mission across the Solar System.</p>
+      <div class="hero-stats">
+        <div><strong>4</strong><span>DESTINATIONS</span></div>
+        <div><strong>1</strong><span>ROCKET TO BUILD</span></div>
+        <div><strong>∞</strong><span>IMAGINATION</span></div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="panel destination-panel">
+        <div class="section-label">01 / DESTINATION</div>
+        <h2>Where to, captain?</h2>
+        <p class="muted">Choose your first destination.</p>
+        <div class="destinations" role="group" aria-label="Choose destination">
+          <button class="planet-card selected" data-planet="Moon" aria-pressed="true"><span class="planet moon">●</span><span><b>Moon</b><small>3-day trip*</small></span><span class="check">✓</span></button>
+          <button class="planet-card" data-planet="Mars" aria-pressed="false"><span class="planet mars">●</span><span><b>Mars</b><small>7-month trip*</small></span><span class="check">✓</span></button>
+          <button class="planet-card" data-planet="Jupiter" aria-pressed="false"><span class="planet jupiter">●</span><span><b>Jupiter</b><small>Gas giant</small></span><span class="check">✓</span></button>
+          <button class="planet-card" data-planet="Saturn" aria-pressed="false"><span class="planet saturn">●</span><span><b>Saturn</b><small>Ringed world</small></span><span class="check">✓</span></button>
+        </div>
+        <p class="tiny">*Illustrative labels for this game, not mission predictions.</p>
+      </div>
+
+      <div class="panel rocket-panel">
+        <div class="section-label">02 / ROCKET LAB</div>
+        <h2>Build your spacecraft</h2>
+        <p class="muted">Tune your design before liftoff.</p>
+        <div class="rocket-scene" aria-label="Rocket preview">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="preview-planet"></div>
+          <div class="rocket" id="rocketPreview"><div class="rocket-nose"></div><div class="rocket-body"><span class="window"></span><span class="stripe"></span></div><div class="rocket-fin left-fin"></div><div class="rocket-fin right-fin"></div><div class="rocket-flame"></div></div>
+          <div class="scene-caption">ROCKET PREVIEW <span id="engineLabel">STANDARD ENGINE</span></div>
+        </div>
+        <label class="slider-label" for="engine">Engine power <output id="engineValue">60%</output></label>
+        <input id="engine" type="range" min="20" max="100" value="60">
+        <div class="range-ends"><span>Efficient</span><span>Powerful</span></div>
+        <label class="slider-label" for="fuel">Fuel capacity <output id="fuelValue">50%</output></label>
+        <input id="fuel" type="range" min="20" max="100" value="50">
+        <div class="range-ends"><span>Light load</span><span>Long range</span></div>
+        <button class="primary-button" id="buildBtn">✦ BUILD MY ROCKET</button>
+      </div>
+    </section>
+
+    <section class="launch-panel panel">
+      <div>
+        <div class="section-label">03 / MISSION CONTROL</div>
+        <h2 id="missionTitle">Ready for the Moon?</h2>
+        <p class="muted" id="missionText">Your rocket is waiting. Build your design, then start the countdown.</p>
+      </div>
+      <div class="launch-actions">
+        <button class="primary-button launch-button" id="launchBtn">▶ START COUNTDOWN</button>
+        <button class="secondary-button" id="returnBtn" disabled>↩ RETURN TO EARTH</button>
+      </div>
+      <div class="countdown" id="countdown" aria-live="polite">MISSION STATUS: STANDBY</div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="mission-result" id="result" aria-live="polite"></div>
+    </section>
+    <p class="disclaimer">A playful educational simulation. It does not model real rocket physics or provide real-world flight guidance.</p>
+  </main>
+  <footer>SPACE AERO <span>Made for curious minds ✦</span></footer>
+</body>
+</html>
